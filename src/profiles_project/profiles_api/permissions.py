@@ -21,6 +21,4 @@ class PostOwnStatus(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return True
 
-        print('obj: {0}\nview: {1}'.format(obj, view))
-
         return obj.user_profile.id == request.user.id
