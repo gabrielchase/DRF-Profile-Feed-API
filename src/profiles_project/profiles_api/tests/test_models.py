@@ -1,5 +1,6 @@
 import pytest
 from mixer.backend.django import mixer
+from .. import models
 pytestmark = pytest.mark.django_db
 
 class TestUserProfile:
@@ -20,6 +21,7 @@ class TestUserProfile:
     def test_model__str__(self):
         obj = mixer.blend('profiles_api.UserProfile')
         assert obj.email == str(obj), "Object's string representation is its email"
+        
 
 class TestProfileFeedItem:
     def test_model(self):
